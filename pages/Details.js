@@ -19,7 +19,7 @@ const DetailsHeader = ({ data, navigation }) => {
 const Details = ({ route, navigation }) => {
   // console.log(route.params.data.bids)
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <FocusedStatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
@@ -27,7 +27,7 @@ const Details = ({ route, navigation }) => {
       />
 
       {/* place a bid */}
-      <View style={{ width: '100%', position: 'absolute', bottom: 0, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ width: '100%', position: 'absolute', bottom: 0, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
         <View style={style.placeBid}>
           <Text style={style.font}>Place a bid</Text>
         </View>

@@ -9,7 +9,7 @@ export default function DetailsDesc({ data }) {
   const [text, settext] = useState(data.description.slice(0, 200))
   const [readmore, setreadmore] = useState(false)
   return (
-    <View>
+    <View style={{ backgroundColor: "white" }}>
       <View style={style.root}>
         <NFTTitle title={data.name} subTitle={data.creator} titleSize={SIZES.extraLarge} subTitleSize={SIZES.font} />
         <View style={{ paddingHorizontal: SIZES.font }}>
