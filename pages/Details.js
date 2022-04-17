@@ -1,13 +1,23 @@
 import React from 'react';
-import { Text, View, StyleSheet, Images, SafeAreaView, FlatList } from 'react-native';
+import { Text, View, StyleSheet, Image, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, SHADOWS, SIZES, assets } from '../constants';
 import { SubInfo } from "../components/SubInfo "
 import FocusedStatusBar from "../components/FocusedStatusBar"
-import DetailsBid from "../components/DetailsBid"
 import DetailsDesc from "../components/DetailsDesc"
+import DetailsBid from './../components/DetailsBid';
+
+const DetailsHeader = ({ data, navigation }) => {
+  return (<View style={{ width: '100%', height: 373 }}>
+    <Image
+      resizeMode='cover'
+      source={data.image}
+      style={{ width: '100%', height: '100%' }}
+    />
+  </View>)
+}
 
 const Details = ({ route, navigation }) => {
-  console.log(route.params.data.bids)
+  // console.log(route.params.data.bids)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
@@ -26,13 +36,37 @@ const Details = ({ route, navigation }) => {
       {/* flat list for bids */}
       <FlatList
         data={route.params.data.bids}
-        render={({ item }) => { return <DetailsBid /> }}
+        renderItem={({ item }) => <DetailsBid data={item} />}
+        keyExtractor={item => item.id}
+        ListHeaderComponent={() => (
+          < React.Fragment >
+            <DetailsHeader data={route.params.data} navigation={navigation} />
+          </React.Fragment>
+        )
+        }
       />
-    </SafeAreaView>
+
+      <TouchableOpacity
+        onPress={() => { navigation.goBack() }}
+        style={style.back}>
+        <Image source={assets.left} style={{ width: '100%', height: '100%' }} />
+      </TouchableOpacity>
+    </SafeAreaView >
   );
 }
 
 const style = StyleSheet.create({
+  back: {
+    position: 'absolute',
+    left: 5,
+    top: 5,
+    width: 40,
+    height: 40,
+    backgroundColor: COLORS.white,
+    borderRadius: SIZES.extraLarge,
+    padding: 10,
+    margin: 10
+  },
   text: {
     fontSize: 100,
     fontFamily: FONTS.semiBold,
