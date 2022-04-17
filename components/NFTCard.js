@@ -16,7 +16,7 @@ export default function NFTCard({ data }) {
       ...SHADOWS.medium,
       // overflow: 'hidden',
     }}>
-      <View style={{ height: 200, width: '100%' }}>
+      <View style={{ height: 250, width: '100%' }}>
         <Image source={data.image}
           resizeMode='stretch'
           style={{ width: '100%', height: '100%', borderTopLeftRadius: SIZES.font, borderTopRightRadius: SIZES.font }}
@@ -24,7 +24,7 @@ export default function NFTCard({ data }) {
 
         <CircleButton right={10} top={10} imgUrl={assets.heart} />
 
-        <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+        <View style={{ position: 'absolute', bottom: 0, width: '100%', backgroundColor: COLORS.white }}>
           <SubInfo />
 
           <View style={{ width: '100%' }}>
@@ -34,7 +34,11 @@ export default function NFTCard({ data }) {
               titleSize={SIZES.large}
               subTitleSize={SIZES.small}
             />
+
           </View>
+          <ETHPrice price={data.price} />
+
+
         </View>
       </View>
 
