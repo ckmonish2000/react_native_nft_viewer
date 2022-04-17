@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { FONTS } from '../constants';
+import { Text, View, StyleSheet, Images } from 'react-native';
+import { COLORS, FONTS, SHADOWS, SIZES, assets } from '../constants';
+import { SubInfo } from "../components/SubInfo "
+import { FocusedStatusBar } from "../components/FocusedStatusBar"
+import DetailsBid from "../components/DetailsBid"
+import DetailsDesc from "../components/DetailsDesc"
 
-const Details = () => {
+const Details = ({ route, navigation }) => {
+  console.log(route.params.data.name)
   return (
     <View>
       <Text style={style.text}>Details</Text>
