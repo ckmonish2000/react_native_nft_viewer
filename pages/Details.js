@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Images, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, Images, SafeAreaView, FlatList } from 'react-native';
 import { COLORS, FONTS, SHADOWS, SIZES, assets } from '../constants';
 import { SubInfo } from "../components/SubInfo "
 import FocusedStatusBar from "../components/FocusedStatusBar"
@@ -7,7 +7,7 @@ import DetailsBid from "../components/DetailsBid"
 import DetailsDesc from "../components/DetailsDesc"
 
 const Details = ({ route, navigation }) => {
-  console.log(route.params.data.name)
+  console.log(route.params.data.bids)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
@@ -16,11 +16,18 @@ const Details = ({ route, navigation }) => {
       // translucent={true}
       />
 
+      {/* place a bid */}
       <View style={{ width: '100%', position: 'absolute', bottom: 0, justifyContent: 'center', alignItems: 'center' }}>
         <View style={style.placeBid}>
           <Text style={style.font}>Place a bid</Text>
         </View>
       </View>
+
+      {/* flat list for bids */}
+      <FlatList
+        data={route.params.data.bids}
+        render={({ item }) => { return <DetailsBid /> }}
+      />
     </SafeAreaView>
   );
 }
