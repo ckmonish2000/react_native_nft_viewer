@@ -3,10 +3,11 @@ import React from 'react'
 import { SIZES, COLORS, SHADOWS, assets, FONTS, } from '../constants'
 
 
-export function NFTTitle() {
+export function NFTTitle({ title, titleSize, subTitle, subTitleSize, }) {
   return (
-    <View>
-      <Text>SubInfo</Text>
+    <View style={{ backgroundColor: COLORS.white, padding: SIZES.font }}>
+      <Text style={{ fontFamily: FONTS.semiBold, fontSize: titleSize, color: COLORS.primary }}>{title}</Text>
+      <Text style={{ fontFamily: FONTS.semiBold, fontSize: subTitleSize }}>{subTitle}</Text>
     </View>
   )
 }
@@ -22,7 +23,7 @@ export function ETHPrice() {
 
 export function ImageCmp({ img, idx }) {
   return (
-    <Image source={img} resizeMode='contain' style={{ width: 35, height: 30, marginLeft: idx === 0 ? 0 : -SIZES.font, marginTop: -10 }} />
+    <Image source={img} resizeMode='contain' style={{ width: 40, height: 40, marginLeft: idx === 0 ? 0 : -SIZES.font, marginTop: -15 }} />
   )
 }
 
@@ -45,11 +46,15 @@ export function EndDate() {
       backgroundColor: COLORS.white,
       justifyContent: 'center',
       alignItems: 'center',
-      ...SHADOWS.light,
       elevation: 1,
-      maxWidth: "50%"
+      maxWidth: "50%",
+      flexDirection: 'column',
+      height: 50,
+      marginTop: -15,
+      ...SHADOWS.light,
     }}>
-      <Text>SubInfo</Text>
+      <Text style={{ fontFamily: FONTS.regular, fontSize: SIZES.small }}>Ending in</Text>
+      <Text style={{ fontFamily: FONTS.bold, fontSize: SIZES.medium }}>12h 30m</Text>
     </View>
   )
 }
@@ -62,6 +67,7 @@ export function SubInfo() {
       marginTop: -SIZES.extraLarge,
       flexDirection: 'row',
       justifyContent: 'space-between',
+      backgroundColor: COLORS.white
     }}>
       <People />
       <EndDate />

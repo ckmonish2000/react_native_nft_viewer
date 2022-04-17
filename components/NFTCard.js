@@ -14,7 +14,7 @@ export default function NFTCard({ data }) {
       borderRadius: SIZES.font,
       margin: SIZES.base,
       ...SHADOWS.medium,
-      overflow: 'hidden',
+      // overflow: 'hidden',
     }}>
       <View style={{ height: 200, width: '100%' }}>
         <Image source={data.image}
@@ -24,7 +24,18 @@ export default function NFTCard({ data }) {
 
         <CircleButton right={10} top={10} imgUrl={assets.heart} />
 
-        <SubInfo />
+        <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+          <SubInfo />
+
+          <View style={{ width: '100%' }}>
+            <NFTTitle
+              title={data.name}
+              subTitle={data.creator}
+              titleSize={SIZES.large}
+              subTitleSize={SIZES.small}
+            />
+          </View>
+        </View>
       </View>
 
 
