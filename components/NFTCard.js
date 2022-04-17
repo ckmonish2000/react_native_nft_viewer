@@ -42,8 +42,8 @@ export default function NFTCard({ data }) {
             {/* <Button title='More Info' /> */}
             <TouchableOpacity
               onPress={() => { navigation.navigate("Details", { data }) }}
-              style={{ ...SHADOWS.medium, backgroundColor: COLORS.primary, borderRadius: SIZES.base, padding: 8, marginBottom: SIZES.base, fontSize: SIZES.font }}>
-              <Text style={{ color: COLORS.white }}>More Info</Text>
+              style={{ ...SHADOWS.medium, backgroundColor: COLORS.primary, borderRadius: SIZES.large, padding: 8, marginBottom: SIZES.base, fontSize: SIZES.font }}>
+              <Text style={{ color: COLORS.white }}>Place a bid</Text>
             </TouchableOpacity>
           </View>
 
