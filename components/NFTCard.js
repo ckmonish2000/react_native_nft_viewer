@@ -40,7 +40,9 @@ export default function NFTCard({ data }) {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', paddingHorizontal: SIZES.font }}>
             <ETHPrice price={data.price} />
             {/* <Button title='More Info' /> */}
-            <TouchableOpacity style={{ ...SHADOWS.medium, backgroundColor: COLORS.primary, borderRadius: SIZES.base, padding: 8, marginBottom: SIZES.base, fontSize: SIZES.font }}>
+            <TouchableOpacity
+              onPress={() => { navigation.navigate("Details") }}
+              style={{ ...SHADOWS.medium, backgroundColor: COLORS.primary, borderRadius: SIZES.base, padding: 8, marginBottom: SIZES.base, fontSize: SIZES.font }}>
               <Text style={{ color: COLORS.white }}>More Info</Text>
             </TouchableOpacity>
           </View>
