@@ -58,6 +58,7 @@ const style = StyleSheet.create({
     paddingHorizontal: SIZES.font,
     paddingVertical: SIZES.small - 10,
     borderRadius: 10,
+    marginTop: 15,
 
   }
 })
