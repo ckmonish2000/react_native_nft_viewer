@@ -15,7 +15,7 @@ export function NFTTitle({ title, titleSize, subTitle, subTitleSize, }) {
 
 export function ETHPrice({ price }) {
   return (
-    <View style={{ width: "100%", flexDirection: 'row', paddingHorizontal: SIZES.font, paddingVertical: 8, alignItems: 'center', marginBottom: 5 }}>
+    <View style={{ flexDirection: 'row', paddingVertical: 8, alignItems: 'center', marginBottom: 5 }}>
       <Image source={assets.eth} style={{ width: 15, height: 15 }} />
       <Text style={{ fontFamily: FONTS.bold }}>{price}</Text>
     </View>
