@@ -51,6 +51,12 @@ const Details = ({ route, navigation }) => {
         style={style.back}>
         <Image source={assets.left} style={{ width: '100%', height: '100%' }} />
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => { navigation.goBack() }}
+        style={style.back2}>
+        <Image source={assets.heart} style={{ width: '100%', height: '100%' }} />
+      </TouchableOpacity>
     </SafeAreaView >
   );
 }
@@ -85,7 +91,18 @@ const style = StyleSheet.create({
     fontFamily: FONTS.semiBold,
     fontSize: 20,
     textAlign: 'center'
-  }
+  },
+  back2: {
+    position: 'absolute',
+    right: 5,
+    top: 5,
+    width: 40,
+    height: 40,
+    backgroundColor: COLORS.white,
+    borderRadius: SIZES.extraLarge,
+    padding: 10,
+    margin: 10
+  },
 });
 
 export default Details;
