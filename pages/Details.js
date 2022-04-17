@@ -41,13 +41,15 @@ const Details = ({ route, navigation }) => {
         ListHeaderComponent={() => (
           < React.Fragment >
             <DetailsHeader data={route.params.data} navigation={navigation} />
+            <View style={{ backgroundColor: COLORS.white }}>
+              <SubInfo />
+              <DetailsDesc data={route.params.data} />
+            </View>
           </React.Fragment>
         )
         }
       />
-      <View style={{ position: 'absolute', top: 363, width: '100%', }}>
-        <SubInfo />
-      </View>
+
 
       <TouchableOpacity
         onPress={() => { navigation.goBack() }}

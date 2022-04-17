@@ -1,12 +1,18 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
 
-export default class DetailsDesc extends Component {
-  render() {
-    return (
-      <View>
-        <Text>DetailsDesc</Text>
-      </View>
-    )
-  }
+import { ETHPrice, NFTTitle } from "../components/SubInfo"
+
+export default function DetailsDesc({ data }) {
+  return (
+    <View style={style.root}>
+      <NFTTitle title={data.name} subTitle={data.creator} />
+    </View>
+  )
 }
+
+const style = StyleSheet.create({
+  root: {
+    marginTop: 20
+  }
+})
