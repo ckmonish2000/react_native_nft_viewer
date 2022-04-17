@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, SHADOWS, SIZES, assets } from '../constants';
-import { SubInfo } from "../components/SubInfo "
+import { SubInfo } from "../components/SubInfo"
 import FocusedStatusBar from "../components/FocusedStatusBar"
 import DetailsDesc from "../components/DetailsDesc"
 import DetailsBid from './../components/DetailsBid';
@@ -45,18 +45,19 @@ const Details = ({ route, navigation }) => {
         )
         }
       />
+      <View style={{ position: 'absolute', top: 363, width: '100%', }}>
+        <SubInfo />
+      </View>
 
       <TouchableOpacity
         onPress={() => { navigation.goBack() }}
         style={style.back}>
         <Image source={assets.left} style={{ width: '100%', height: '100%' }} />
       </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => { navigation.goBack() }}
-        style={style.back2}>
+      <TouchableOpacity style={style.back2}>
         <Image source={assets.heart} style={{ width: '100%', height: '100%' }} />
       </TouchableOpacity>
+
     </SafeAreaView >
   );
 }
